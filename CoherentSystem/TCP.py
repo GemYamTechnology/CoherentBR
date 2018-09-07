@@ -24,7 +24,7 @@ def EchoClient(ServerHost, ServerPort):
 	if ServerHost and ServerPort == "":
 		ServerHost, ServerPort = "", 50007
 	else:
-		print "TCP Echo Data"
+		#print "TCP Echo Data"
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 		try:
@@ -65,11 +65,11 @@ def EchoData(conn, addr, ServerHost, ServerPort):
 			ClientIP, ClientPort = addr
 			print "Incoming connection accepted: " + str(ClientIP) + ":" + str(ClientPort)#Client of IP and Port
 
-			print date, addr[0], ":", repr(data)#顯示時間、IP、Port、TCP資料
+			print date, addr[0]#, ":", repr(data)#顯示時間、IP、Port、TCP資料
 			print ""
 			conn.send(data)
 		except KeyboardInterrupt:
-			print "Closing Connection"
+			#print "Closing Connection"
 			s.close()
 			s = None
 			sys.exit(1)
