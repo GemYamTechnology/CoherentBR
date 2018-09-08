@@ -16,6 +16,7 @@ def EEG_TCP_Client(target_host, target_port, string):
 	client.send(string)
 
 	response = client.recv(4096)
+	client.close()
 	#print response
 	#print ""
 	return response
