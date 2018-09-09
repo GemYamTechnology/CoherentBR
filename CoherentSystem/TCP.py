@@ -48,6 +48,7 @@ def EchoClient(ServerHost, ServerPort):
 			s.close()
 			s = None
 			sys.exit(1)
+		s.close()
 		AllList = [conn, addr, ServerHost, ServerPort]
 		return AllList
 

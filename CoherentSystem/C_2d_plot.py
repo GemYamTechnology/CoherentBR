@@ -1,9 +1,11 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+# coding = UTF-8
 #Derive from "tcp_echo_server_0101bOK"
 
 """
 A simple "tcp echo server" for demonstrating TCP usage.
-The server listens for TCP packets and echoes any received 
+The server listens for TCP packets and echoes any received
 packets back to the originating host.
 
 """
@@ -24,22 +26,22 @@ def animate(i):
     xs1 = []
     ys1 = []
     xs2 = []
-    ys2 = []    
+    ys2 = []
     for line in lines1:
         if len(line) > 1:
             x, y = line.split(',')
             xs1.append(int(x))
             ys1.append(int(y))
-            
+
     for line in lines2:
         if len(line) > 1:
             x, y = line.split(',')
             xs2.append(int(x))
             ys2.append(int(y))
-                        
+
     ax1.clear()
     ax1.plot(xs1,ys1,linewidth=1)
     ax1.plot(xs2,ys2,linewidth=1)
-    
+
 ani = animation.FuncAnimation(fig, animate,interval=1)
 plt.show()
