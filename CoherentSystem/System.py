@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # coding = UTF-8
 # Derive from: recv_Laisan2
+python
 import DecodeString
 import DataImage
 import sys

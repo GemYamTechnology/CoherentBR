@@ -30,8 +30,8 @@ def InputLines2(Lines):
     for lines in Lines:
         for line in lines:
             y += 1
-            if len(line) > 1:
-                X.append(int(x))
+            if len('int(line)') > 1:
+                X.append(int(line))
                 Y.append(int(y))
     AllList = X, Y
     return AllList
