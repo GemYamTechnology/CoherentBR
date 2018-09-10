@@ -92,6 +92,7 @@ def DecimalConversion(AfterDecoding):#轉換進制的模組，利用conv24bit()�
     return DigitalList
 
 def RCTCLDCOBSDC(String):
+    OutputList = []
     import DecodeString
     for NoCommasStringList in DecodeString.RemoveCommas(String):
         NoCommasStringList = [NoCommasStringList]
@@ -101,4 +102,6 @@ def RCTCLDCOBSDC(String):
             for TCL in TwoCharacterList:
                 #print TCQ, TCL
                 AfterDecoding = DecodeString.DecodCOBS(TCQ, TCL)
-                print DecodeString.DecimalConversion(AfterDecoding)
+                #print DecodeString.DecimalConversion(AfterDecoding)
+                OutputList.append(DecodeString.DecimalConversion(AfterDecoding))
+    return OutputList

@@ -23,15 +23,16 @@ def InputLines1(Lines):
     AllList = X, Y
     return AllList
 
-def InputLines(Lines):
-    ax1.clear()
+def InputLines2(Lines):
     X = []
     Y = []
-    for line in Lines:
-        if len(line) > 1:
-            x, y = line.split(',')
-            X.append(int(x))
-            Y.append(int(y))
+    y = 0
+    for lines in Lines:
+        for line in lines:
+            y += 1
+            if len(line) > 1:
+                X.append(int(x))
+                Y.append(int(y))
     AllList = X, Y
     return AllList
 
@@ -39,6 +40,7 @@ def AnimateShow(X, Y):
     style.use('fivethirtyeight')
     fig = plt.figure()
     ax1 = fig.add_subplot(1, 1, 1)
+    ax1.clear()
     ax1.plot(X, Y, linewidth=1)
-    ani = animation.FuncAnimation(fig, animate,interval=1)
+    #ani = animation.FuncAnimation(fig, animate,interval=1)
     plt.show()
