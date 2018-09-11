@@ -31,8 +31,8 @@ def InputLines2(Lines):
         for line in lines:
             y += 1
             if len('int(line)') > 1:
-                X.append(int(line))
-                Y.append(int(y))
+                Y.append(int(line))
+                X.append(int(y))
     AllList = X, Y
     return AllList
 
@@ -42,5 +42,9 @@ def AnimateShow(X, Y):
     ax1 = fig.add_subplot(1, 1, 1)
     ax1.clear()
     ax1.plot(X, Y, linewidth=1)
-    #ani = animation.FuncAnimation(fig, animate,interval=1)
+    #ani = animation.FuncAnimation(fig, animate, interval=1)
     plt.show()
+
+def animate(X, Y):
+    ax1.clear()
+    ax1.plot(X, Y, linewidth=1)
