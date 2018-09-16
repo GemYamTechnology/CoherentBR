@@ -8,10 +8,13 @@ import sys
 import string
 import TCP
 
-X, Y = DataImage.InputLines2(DecodedSequenceList)
-DataImage.AnimateShow(X, Y)
+#X, Y = DataImage.InputLines2(DecodedSequenceList)
+#DataImage.AnimateShow(X, Y)
 
 ServerHost, ServerPort = "",50007
-conn, addr, ServerHost, ServerPort = TCP.EchoClient(ServerHost, ServerPort)
-date1, ClientIP, ClientPort, ServerHost, ServerPort, ReprData = TCP.EchoData(conn, addr, ServerHost, ServerPort)
-DecodedSequenceList = DecodeString.RCTCLDCOBSDC(ReprData)
+while(1):
+    conn, addr, ServerHost, ServerPort = TCP.EchoClient(ServerHost, ServerPort)
+    date1, ClientIP, ClientPort, ServerHost, ServerPort, ReprData = TCP.EchoData(conn, addr, ServerHost, ServerPort)
+
+while(1):
+    DecodedSequenceList = DecodeString.RCTCLDCOBSDC(ReprData)

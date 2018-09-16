@@ -102,6 +102,6 @@ def RCTCLDCOBSDC(String):
             for TCL in TwoCharacterList:
                 #print TCQ, TCL
                 AfterDecoding = DecodeString.DecodCOBS(TCQ, TCL)
-                #print DecodeString.DecimalConversion(AfterDecoding)
+                print DecodeString.DecimalConversion(AfterDecoding)
                 OutputList.append(DecodeString.DecimalConversion(AfterDecoding))
     return OutputList
