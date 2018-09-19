@@ -12,4 +12,4 @@ import TCP
 ServerHost, ServerPort = "",50007
 while(1):
     conn, addr, ServerHost, ServerPort = TCP.EchoClient(ServerHost, ServerPort)
-    TCP.EchoData(conn, addr, ServerHost, ServerPort)
+    date1, ClientIP, ClientPort, ServerHost, ServerPort, ReprData = TCP.EchoData(conn, addr, ServerHost, ServerPort)
