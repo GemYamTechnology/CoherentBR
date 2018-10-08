@@ -1,50 +1,30 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 # coding = UTF-8
-"""
-20180711加上製作圖片的模組，讓製圖時比較方便，可惜沒有成功
-"""
-import warnings
-import numpy as np
-import pandas as pd
+#Derive from "tcp_echo_server_0101bOK"
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib import style
+import numpy as np
 
-def InputLines1(Lines):
-    ax1.clear()
-    X = []
-    Y = []
-    for line in Lines:
-        if len(line) > 1:
-            x, y = line.split(',')
-            X.append(int(x))
-            Y.append(int(y))
-    AllList = X, Y
-    return AllList
-
-def InputLines2(Lines):
-    X = []
-    Y = []
-    y = 0
-    for lines in Lines:
+class DataImage:
+    def __init__(self):
+        fig = plt.figure()
+        self.Fig = fig
+        ax1 = fig.add_subplot(1,1,1)
+        x = 0
+        xs1 = []
+        ys1 = []
         for line in lines:
-            y += 1
-            if len('int(line)') > 1:
-                Y.append(int(line))
-                X.append(int(y))
-    AllList = X, Y
-    return AllList
+            x += 1
+            y = line
+            xs1.append(int(x))
+            ys1.append(int(y))
 
-def AnimateShow(X, Y):
-    style.use('fivethirtyeight')
-    fig = plt.figure()
-    ax1 = fig.add_subplot(1, 1, 1)
-    ax1.clear()
-    ax1.plot(X, Y, linewidth=1)
-    #ani = animation.FuncAnimation(fig, animate, interval=1)
-    plt.show()
+        ax1.clear()
+        self.Ax1 = ax1.plot(xs1,ys1,linewidth=1)
 
-def animate(X, Y):
-    ax1.clear()
-    ax1.plot(X, Y, linewidth=1)
+    def animate(self, lines):
+        style.use('fivethirtyeight')
+        ani = animation.FuncAnimation(self.Fig, self.Ax1,interval=1)
+        plt.show()
