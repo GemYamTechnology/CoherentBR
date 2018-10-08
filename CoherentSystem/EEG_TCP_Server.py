@@ -10,7 +10,7 @@ packets back to the originating host.
 import TCP
 import FileAccess as FA
 i = 0
-FileName = "./Data.csv"
+FileName = "../Data/Data.csv"
 ServerHost, ServerPort = "",50007
 Data = []
 while(1):
