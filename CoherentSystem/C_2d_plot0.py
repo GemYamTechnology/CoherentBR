@@ -1,0 +1,42 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# coding = UTF-8
+#Derive from "tcp_echo_server_0101bOK"
+
+"""
+A simple "tcp echo server" for demonstrating TCP usage.
+The server listens for TCP packets and echoes any received
+packets back to the originating host.
+
+"""
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib import style
+import numpy as np
+
+class DataImage:
+    """docstring for .DataImage"""
+    def __init__(self):
+        fig = plt.figure()
+        self.Fig = fig
+        ax1 = fig.add_subplot(1,1,1)
+        x = 0
+        xs1 = []
+        ys1 = []
+        for line in lines:
+            x += 1
+            y = line
+            xs1.append(int(x))
+            ys1.append(int(y))
+
+        ax1.clear()
+        self.Ax1 = ax1.plot(xs1,ys1,linewidth=1)
+
+    def animate(self, lines):
+        style.use('fivethirtyeight')
+        ani = animation.FuncAnimation(self.Fig, self.Ax1,interval=1)
+        plt.show()
+
+lines = [1850826, 1846028, 1858695, 1846032, 1851374, 1844861, 1854828, 1855687]
+DI = DataImage()
+DI.animate(lines)
