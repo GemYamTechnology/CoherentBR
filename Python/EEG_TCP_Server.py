@@ -17,5 +17,5 @@ while(1):
     i += 1
     conn, addr, ServerHost, ServerPort = TCP.EchoClient(ServerHost, ServerPort)
     date, ClientIP, ClientPort, ServerHost, ServerPort, ReprData = TCP.EchoData(conn, addr, ServerHost, ServerPort)
-    Data = str(date) + "," + str(ClientIP) + ":" + str(ClientPort) + "," + str(ServerHost) + ":" + str(ServerPort) + ',"' + str(ReprData) + '"' + '\n'
+    #Data = str(date) + "," + str(ClientIP) + ":" + str(ClientPort) + "," + str(ServerHost) + ":" + str(ServerPort) + ',"' + str(ReprData) + '"' + '\n'
     FA.AddDataCSV(FileName, Data)
