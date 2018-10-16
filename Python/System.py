@@ -3,23 +3,20 @@
 # coding = UTF-8
 # Derive from: recv_Laisan2
 import DecodeString
-from DataImage import *
 import sys
 import string
 import TCP
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-from matplotlib import style
-import numpy as np
+import FileAccess as FA
 
-FileName = "H:/Data.csv"
+FileName = "../Data/Data.csv"
 ServerHost, ServerPort = "",50007
 
 while (1):
+    LinesList = ""
     conn, addr, ServerHost, ServerPort = TCP.EchoClient(ServerHost, ServerPort)
     date, ClientIP, ClientPort, ServerHost, ServerPort, ReprData = TCP.EchoData(conn, addr, ServerHost, ServerPort)
     LinesList = DecodeString.RCTCLDCOBSDC(ReprData)
-    for Lines in LinesLiset:
+    for Lines in LinesList:
         for Line in Lines:
-            Data = date + "," + LinesList
+            Data = str(date) + "," + str(Line) + "\n"
             FA.AddDataCSV(FileName, Data)

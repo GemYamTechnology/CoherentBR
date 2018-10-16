@@ -78,5 +78,5 @@ def EchoData(conn, addr, ServerHost, ServerPort):
 
 		conn.close()
 		ReprData = repr(data)
-		AllList = [date, ClientIP, ClientPort, ServerHost, ServerPort, ReprData]
+		AllList = [str(date), ClientIP, ClientPort, ServerHost, ServerPort, ReprData]
 		return AllList

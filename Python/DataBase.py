@@ -6,8 +6,7 @@
 201807021751可成功將狀態上傳至資料庫
 """
 from Tkinter import *
-import MySQLdb
-
+import pymysql
 
 def ConnectMySQLServer(Host, User, Passwd, DataBase, Charset):
     db = MySQLdb.connect(Host, User, Passwd, DataBase, Charset)
